@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --BackgrondColor: #40982a;
+  --LoginBackground: #8de685;
+  --HtmlBorderTop: #7bda5e;
+  --Shadows: 4px 4px 10px 0px #292929;
+  --SignInUp: #7bff7f;
+  --borders: #424242;
+  --bordersFocus: #007bff;
+  --inputBackground: #b3ffb6;
+  --placeholderColor: #484848;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  background-color: var(--BackgrondColor);
+  border-top: var(--HtmlBorderTop) solid 10vh;
+  height: 80vh;
+}
+
+main {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 3.2vh;
+  max-height: 84vh;
+}
+
+main::after {
+  content: "COMERSE AL MUNDO SANAMENTE";
+  position: absolute;
+  display: block;
+  font-size: 2.5vw;
+  top: 3vh;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-image: url("../assets/Logo.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 9vh;
+  height: 9vh;
+  font-size: 2.5vw;
+  top: 0.5vh;
+  left: 22vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  background-color: var(--LoginBackground);
+  margin: 0;
+  width: calc(37vw - 20vh);
+  height: 62vh;
+
+  border-radius: 10vh;
+  box-shadow: var(--Shadows);
+
+  padding: 10vh;
+}
+
+form:nth-child(2) {
+  gap: 2vh;
+}
+
+input {
+  font-size: 1.5vw;
+  font-weight: lighter;
+
+  padding: 2vh;
+  margin: 0;
+  height: 5.5vh;
+  background-color: var(--inputBackground);
+
+  border-radius: 3.9vh;
+  border: var(--borders) solid 0.2vw;
+  box-shadow: var(--Shadows);
+
+  transition: all 0.3s ease-in-out;
+}
+
+input:hover {
+  transform: scale(1.05);
+
+  transition: 0.2s ease-in-out;
+}
+
+input:focus {
+  border: 2px solid var(--bordersFocus); /* azul al enfocar */
+  transform: scale(1.05);
+
+  transition: 0.2s ease-in-out;
+}
+
+input::placeholder {
+  color: var(--placeholderColor);
+
+  transition: 0.35s ease-in-out;
+}
+
+input:focus::placeholder {
+  color: transparent;
+  transition: 0.35s ease-in-out;
+}
+
+.loginText,
+.registerText {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.8vw;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+
+  text-align: center;
+  background-color: var(--SignInUp);
+  padding: 10%;
+  height: 4vh;
+
+  border-radius: 3.9vh;
+  border: var(--borders) solid 0.3vw;
+  box-shadow: var(--Shadows);
+
+  transition: all 0.3s ease-in-out;
+}

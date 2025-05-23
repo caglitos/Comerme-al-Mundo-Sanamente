@@ -90,6 +90,7 @@ app.post("/api/usuario", async (req, res) => {
           httpOnly: true,
           sameSite: "lax",
           // secure: true, // Activa esto solo si estás en HTTPS
+          maxAge: 30 * 24 * 60 * 60 * 1000, // 30 días
         });
 
         res.json({ id: this.lastID });
@@ -123,6 +124,7 @@ app.post("/api/login", (req, res) => {
         httpOnly: true,
         sameSite: "lax",
         // secure: true,
+        maxAge: 30 * 24 * 60 * 60 * 1000, // 30 días
       });
 
       res.json({ message: "Inicio de sesión exitoso" });
@@ -133,6 +135,8 @@ app.post("/api/login", (req, res) => {
 // Ruta para mostrar perfil del usuario
 app.get("/api/perfil", (req, res) => {
   const token = req.cookies.token;
+
+  console.log("Token:", token);
 
   if (!token) return res.status(401).json({ message: "No autenticado" });
 
@@ -154,3 +158,4 @@ app.get("/api/perfil", (req, res) => {
 
 // Iniciar servidor
 app.listen(3000, () => console.log("Servidor en http://localhost:3000"));
+app.use(express.static("public"));

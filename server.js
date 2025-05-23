@@ -29,7 +29,7 @@ db.serialize(() => {
     CREATE TABLE IF NOT EXISTS usuario (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       nombre TEXT,
-      email TEXT,
+      email TEXT UNIQUE,
       password TEXT
     );
   `);
@@ -159,3 +159,15 @@ app.get("/api/perfil", (req, res) => {
 // Iniciar servidor
 app.listen(3000, () => console.log("Servidor en http://localhost:3000"));
 app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  const token = req.cookies.token;
+  if (!token) return res.status(401).send("No autenticado");
+
+  try {
+    jwt.verify(token, SECRET);
+    res.sendFile(__dirname + "/public/index.html");
+  } catch (err) {
+    res.status(401).send("Token inválido o expirado");
+  }
+});

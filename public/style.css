@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+}
+
+:root {
+    --BackgrondColor: #40982A;
+    --LoginBackground: #8DE685;
+    --HtmlBorderTop: #7BDA5E;
+    --SignInUp: #91FF94;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    background-color: var(--BackgrondColor);
+    border-top: var(--HtmlBorderTop) solid 10vh;
+    max-height: 94vh;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5vw;
+    max-height: 84vh;
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: var(--LoginBackground);
+    height: 52vh;
+    width: 18vw;
+    border-radius: 10vh;
+    padding: 4vw;
+
+}
+
+.loginText,
+.registerText {
+    font-weight: 200;
+    font-style: italic;
+    font-size: 1.8vw;
+    text-align: center;
+    background-color: var(--SignInUp);
+    padding: 10%;
+
+}

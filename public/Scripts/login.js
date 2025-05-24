@@ -1,5 +1,21 @@
 // script.js
 // este script funciona para enviar los datos de los formularios de registro y login al backend
+const enter = document.getElementById("Lpassword");
+enter.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    alert("hola");
+    event.preventDefault(); // Evitar el comportamiento predeterminado del Enter
+    sendLoginData(); // Llamar a la función para enviar los datos de inicio de sesión
+  }
+});
+const enter2 = document.getElementById("RconfirmPassword");
+enter2.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    alert("hola2");
+    event.preventDefault(); // Evitar el comportamiento predeterminado del Enter
+    sendRegisterData(); // Llamar a la función para enviar los datos de registro
+  }
+});
 
 // Función para enviar los datos del formulario de registro
 function sendRegisterData() {
@@ -38,6 +54,7 @@ function sendRegisterData() {
     .then((response) => response.json())
     .then((data) => {
       console.log("Success:", data);
+
       //window.location.href = "./../index.html"; // Redirigir a la página de inicio
     })
     .catch((error) => {

@@ -55,7 +55,7 @@ function sendRegisterData() {
     .then((data) => {
       console.log("Success:", data);
 
-      //window.location.href = "./../index.html"; // Redirigir a la página de inicio
+      window.location.href = "./../index.html"; // Redirigir a la página de inicio
     })
     .catch((error) => {
       console.error("Error:", error);

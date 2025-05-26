@@ -1,0 +1,249 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --scrollBackground: #7bda5e;
+  --scrollThumb: #4ca248;
+  --BackgrondColor: #40982a;
+  --LoginBackground: #8de685;
+  --HtmlBorderTop: #7bda5e;
+  --Shadows: 4px 4px 10px 0px #292929;
+  --SignInUp: #7bff7f;
+  --borders: #424242;
+  --bordersFocus: #007bff;
+  --inputBackground: #b3ffb6;
+  --placeholderColor: #484848;
+  --formsBorderTop: #4ae224;
+  --formsColor: #7aff59;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--scrollBackground);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollThumb);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darken(var(--scrollThumb), 10%);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollThumb) var(--scrollBackground);
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: var(--HtmlBorderTop);
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+header::after {
+  content: "COMERSE AL MUNDO SANAMENTE";
+  position: absolute;
+  display: block;
+  font-size: 2.5vw;
+  top: 2.4vh;
+  left: 28vw;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-image: url("../assets/Logo.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 9vh;
+  height: 9vh;
+  font-size: 2.5vw;
+  top: 0.5vh;
+  left: 22vw;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 0vh;
+  margin: 0;
+  flex-shrink: 0;
+  background-color: var(--BackgrondColor);
+
+  min-height: 90vh;
+}
+
+section {
+  min-height: 100vh;
+  position: sticky;
+  top: 10vh; /* para que quede debajo del header fijo */
+  z-index: 999;
+  background: inherit;
+  scroll-snap-align: center;
+}
+
+section:nth-child(2) {
+  background-color: var(--formsColor);
+}
+
+section:nth-child(3) {
+  min-height: 90vh;
+  max-height: 90vh;
+  position: relative;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  background-color: var(--LoginBackground);
+  margin: 0;
+  width: calc(37vw - 20vh);
+  height: 60vh;
+
+  border-radius: 10vh;
+  box-shadow: var(--Shadows);
+
+  padding: 10vh;
+}
+
+form:nth-child(2) {
+  gap: 2vh;
+}
+
+input {
+  font-size: 1.5vw;
+  font-weight: lighter;
+
+  padding: 2vh;
+  margin: 0;
+  height: 5.5vh;
+  background-color: var(--inputBackground);
+
+  border-radius: 3.9vh;
+  border: var(--borders) solid 0.2vw;
+  box-shadow: var(--Shadows);
+
+  transition: all 0.3s ease-in-out;
+}
+
+input:hover {
+  transform: scale(1.05);
+
+  transition: 0.2s ease-in-out;
+}
+
+input:focus {
+  border: 2px solid var(--bordersFocus); /* azul al enfocar */
+  transform: scale(1.05);
+
+  transition: 0.2s ease-in-out;
+}
+
+input::placeholder {
+  color: var(--placeholderColor);
+
+  transition: 0.35s ease-in-out;
+}
+
+input:focus::placeholder {
+  color: transparent;
+  transition: 0.35s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 100;
+  font-size: 1.5vw;
+
+  transition: all 0.3s ease-in-out;
+}
+
+a > * {
+  height: 39vh;
+  width: 30vw;
+  border-radius: 5vh;
+  background-color: var(--formsColor);
+}
+
+a .deportistas div {
+  background-color: var(--formsBorderTop);
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  border-top-left-radius: 5vh;
+  border-top-right-radius: 5vh;
+}
+
+a .deportistas img {
+  position: relative;
+  width: 20vh;
+  height: 20vh;
+  object-fit: cover;
+  top: 4vh;
+  left: 10vw;
+}
+
+.btn-forms {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+}
+
+.loginText,
+.registerText {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.8vw;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+
+  text-align: center;
+  background-color: var(--SignInUp);
+  padding: 10%;
+  height: 4vh;
+
+  border-radius: 3.9vh;
+  border: var(--borders) solid 0.3vw;
+  box-shadow: var(--Shadows);
+
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-box {
+  opacity: 1; /* Siempre visible */
+  transform: translateX(0); /* Estado final */
+  will-change: transform; /* Optimización */
+}
+
+/* Estado inicial según dirección */
+.slide-box[data-direction="left"] {
+  transform: translateX(-100%);
+}
+.slide-box[data-direction="right"] {
+  transform: translateX(100%);
+}

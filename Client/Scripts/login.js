@@ -3,7 +3,6 @@
 const enter = document.getElementById("Lpassword");
 enter.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
-    alert("hola");
     event.preventDefault(); // Evitar el comportamiento predeterminado del Enter
     sendLoginData(); // Llamar a la función para enviar los datos de inicio de sesión
   }
@@ -11,7 +10,6 @@ enter.addEventListener("keypress", function (event) {
 const enter2 = document.getElementById("RconfirmPassword");
 enter2.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
-    alert("hola2");
     event.preventDefault(); // Evitar el comportamiento predeterminado del Enter
     sendRegisterData(); // Llamar a la función para enviar los datos de registro
   }
@@ -38,17 +36,18 @@ function sendRegisterData() {
 
   // Crear un objeto con los datos del formulario
   const data = {
-    username: username,
+    nombre: username, // El backend espera 'nombre', no 'username'
     password: password,
     email: email,
   };
 
   // Enviar los datos al backend usando fetch
-  fetch("./../api/usuario", {
+  fetch("./../api/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    credentials: "include", // Importante para cookies
     body: JSON.stringify(data),
   })
     .then((response) => response.json())

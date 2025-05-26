@@ -5,6 +5,7 @@ import {
   findUserByEmailAndName,
   findUserById,
 } from "../models/user.model.js";
+import e from "express";
 
 export const register = async (req, res) => {
   const { nombre, email, password } = req.body;
@@ -14,7 +15,8 @@ export const register = async (req, res) => {
       if (err) return res.status(500).json(err);
       const token = createAccessToken({ id: lastID });
       res.cookie("token", token, { expiresIn: "7d" });
-      res.json({ id: lastID, username: nombre, email, token });
+
+      res.json({ id: lastID, username: nombre, email: email, token: token });
     });
   } catch (error) {
     res.status(500).json({ message: "Error al registrar usuario" });

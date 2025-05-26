@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { createAccessToken } from "../libs/jwt";
+import { createAccessToken } from "../libs/jwt.js";
 import {
   createUser,
   findUserByEmailAndName,
@@ -21,7 +21,7 @@ export const register = async (req, res) => {
   }
 };
 
-export const LogIn = async (req, res) => {
+export const login = async (req, res) => {
   const { nombre, email, password } = req.body;
   try {
     findUserByEmailAndName(email, nombre, async (err, user) => {

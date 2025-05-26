@@ -1,0 +1,124 @@
+{
+  "deportes": [
+    {
+      "nombre": "Fútbol",
+      "suplementos": ["Proteína Whey", "Creatina", "Electrolitos y sales minerales", "Omega 3", "Multivitamínico"],
+      "entrenamiento": {
+        "principiante": [
+          "Lunes: Técnica (pases, control, tiros) + resistencia ligera (20 min trote)",
+          "Martes: Gimnasio: tren inferior (sentadillas, estocadas, core)",
+          "Miércoles: Descanso activo (bicicleta o natación)",
+          "Jueves: Técnica + táctica básica (posesión, 1v1)",
+          "Viernes: Resistencia + cambios de ritmo (fartlek 25 min)",
+          "Sábado: Partido corto o juego reducido",
+          "Domingo: Descanso"
+        ],
+        "avanzado": [
+          "Lunes: Técnica avanzada + pliometría",
+          "Martes: Fuerza máxima (pierna, core, propiocepción)",
+          "Miércoles: Sprint + agilidad + simulación de partido",
+          "Jueves: Gimnasio tren superior + movilidad",
+          "Viernes: Táctica avanzada (posiciones, presión, transiciones)",
+          "Sábado: Partido completo o simulación",
+          "Domingo: Descanso o recuperación activa"
+        ]
+      }
+    },
+    {
+      "nombre": "Básquet",
+      "suplementos": ["Proteína Whey o vegetal", "BCAA", "Magnesio", "Glucosamina", "Cafeína natural"],
+      "entrenamiento": {
+        "principiante": [
+          "Lunes: Bote + técnica de tiro + cardio (30 min)",
+          "Martes: Fuerza básica + estiramientos",
+          "Miércoles: 1 vs 1, rebotes, coordinación",
+          "Jueves: Tiro en movimiento + desplazamientos",
+          "Viernes: Cardio intervalado + dribbling bajo presión",
+          "Sábado: Partido recreativo o tiro libre",
+          "Domingo: Descanso"
+        ],
+        "avanzado": [
+          "Lunes: Técnica avanzada + pliometría",
+          "Martes: Gimnasio con énfasis en fuerza explosiva",
+          "Miércoles: Juego estructurado + defensa",
+          "Jueves: Entrenamiento mixto (resistencia + técnica)",
+          "Viernes: Simulacro de partido",
+          "Sábado: Rutina específica por posición",
+          "Domingo: Hidroterapia o descanso activo"
+        ]
+      }
+    },
+    {
+      "nombre": "Boxeo",
+      "suplementos": ["Proteína Whey", "Beta-Alanina", "BCAA", "Cafeína pre entreno", "Glutamina"],
+      "entrenamiento": {
+        "principiante": [
+          "Lunes: Técnica básica (guardia, jab, cross) + sombra",
+          "Martes: Saltar la cuerda + abdominales",
+          "Miércoles: Saco + coordinación",
+          "Jueves: Cardio + defensa",
+          "Viernes: Circuito de golpes + sombra",
+          "Sábado: Sparring ligero",
+          "Domingo: Descanso"
+        ],
+        "avanzado": [
+          "Lunes: Técnica + sparring dirigido",
+          "Martes: Saco con intensidad + fuerza resistencia",
+          "Miércoles: Carrera + técnica defensiva",
+          "Jueves: Circuito HIIT + manoplas",
+          "Viernes: Combos + técnica ofensiva",
+          "Sábado: Sparring completo + estiramientos",
+          "Domingo: Descanso total"
+        ]
+      }
+    },
+    {
+      "nombre": "Voleibol",
+      "suplementos": ["Proteína post entrenamiento", "Creatina", "Magnesio y zinc", "Colágeno hidrolizado", "Isotónicos"],
+      "entrenamiento": {
+        "principiante": [
+          "Lunes: Toques, saques y recepción",
+          "Martes: Saltos + movilidad articular",
+          "Miércoles: Descanso",
+          "Jueves: Defensa y colocación básica",
+          "Viernes: Técnica de remate",
+          "Sábado: Juego recreativo",
+          "Domingo: Descanso"
+        ],
+        "avanzado": [
+          "Lunes: Técnica + táctica de bloqueo",
+          "Martes: Gimnasio (piernas y saltos)",
+          "Miércoles: Partido técnico",
+          "Jueves: Resistencia + técnica individual",
+          "Viernes: Juego completo + repaso táctico",
+          "Sábado: Estiramiento, análisis video",
+          "Domingo: Recuperación activa"
+        ]
+      }
+    },
+    {
+      "nombre": "Natación",
+      "suplementos": ["Proteína post entreno", "Electrolitos", "Omega 3", "Vitamina D", "Glutamina"],
+      "entrenamiento": {
+        "principiante": [
+          "Lunes: Técnica de crol + respiración",
+          "Martes: Flotación + piernas",
+          "Miércoles: Descanso",
+          "Jueves: Técnica de espalda + resistencia leve",
+          "Viernes: Estilo libre + vueltas",
+          "Sábado: Juego acuático + técnica",
+          "Domingo: Descanso"
+        ],
+        "avanzado": [
+          "Lunes: Intervalos de velocidad + técnica crol",
+          "Martes: Potencia en piernas + mariposa",
+          "Miércoles: Descanso activo",
+          "Jueves: Estilo libre + cambios de ritmo",
+          "Viernes: Técnica + volumen",
+          "Sábado: Competencia simulada",
+          "Domingo: Estiramientos en agua + relajación"
+        ]
+      }
+    }
+  ]
+}

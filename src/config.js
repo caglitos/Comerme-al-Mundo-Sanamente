@@ -1,1 +1,2 @@
-export const SECRET = "someSecret";
+export const SECRET =
+  "7ph9iWRSTYCGH)VIUG0-9j#$%^YFGCHVJIHY(*T&R^E%#@$H(YHIGOUDT^FIGOHUGYCTUHJveudvUHKCGJ687o96p78";

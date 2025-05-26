@@ -1,0 +1,151 @@
+{
+  "grupos_edad": [
+    {
+      "rango": "0-2",
+      "calorias_base": 1000,
+      "estatura_filtro": {
+        "0.60": 0.9,
+        "0.70": 1.0,
+        "0.80": 1.1
+      },
+      "peso_filtro": {
+        "8": 0.9,
+        "10": 1.0,
+        "12": 1.1
+      },
+      "actividad_fisica": {
+        "baja": 1.0,
+        "moderada": 1.1,
+        "alta": 1.2
+      }
+    },
+    {
+      "rango": "3-5",
+      "calorias_base": 1200,
+      "estatura_filtro": {
+        "0.90": 0.9,
+        "1.00": 1.0,
+        "1.10": 1.1
+      },
+      "peso_filtro": {
+        "14": 0.9,
+        "16": 1.0,
+        "18": 1.1
+      },
+      "actividad_fisica": {
+        "baja": 1.0,
+        "moderada": 1.2,
+        "alta": 1.4
+      }
+    },
+    {
+      "rango": "6-12",
+      "calorias_base": 1500,
+      "estatura_filtro": {
+        "1.10": 0.9,
+        "1.30": 1.0,
+        "1.50": 1.1
+      },
+      "peso_filtro": {
+        "20": 0.9,
+        "25": 1.0,
+        "30": 1.1
+      },
+      "actividad_fisica": {
+        "baja": 1.0,
+        "moderada": 1.3,
+        "alta": 1.5
+      }
+    },
+    {
+      "rango": "13-18",
+      "calorias_base": 2000,
+      "estatura_filtro": {
+        "1.50": 0.9,
+        "1.65": 1.0,
+        "1.80": 1.1
+      },
+      "peso_filtro": {
+        "45": 0.9,
+        "60": 1.0,
+        "75": 1.1
+      },
+      "actividad_fisica": {
+        "baja": 1.0,
+        "moderada": 1.4,
+        "alta": 1.6
+      }
+    },
+    {
+      "rango": "19-30",
+      "calorias_base": 2400,
+      "estatura_filtro": {
+        "1.60": 0.9,
+        "1.75": 1.0,
+        "1.90": 1.1
+      },
+      "peso_filtro": {
+        "60": 0.9,
+        "70": 1.0,
+        "85": 1.1
+      },
+      "actividad_fisica": {
+        "baja": 1.0,
+        "moderada": 1.3,
+        "alta": 1.5
+      }
+    },
+    {
+      "rango": "31-50",
+      "calorias_base": 2200,
+      "estatura_filtro": {
+        "1.60": 0.9,
+        "1.70": 1.0,
+        "1.80": 1.1
+      },
+      "peso_filtro": {
+        "65": 0.9,
+        "75": 1.0,
+        "90": 1.1
+      },
+      "actividad_fisica": {
+        "baja": 1.0,
+        "moderada": 1.2,
+        "alta": 1.4
+      }
+    },
+    {
+      "rango": "51-65",
+      "calorias_base": 2000,
+      "estatura_filtro": {
+        "1.55": 0.9,
+        "1.65": 1.0,
+        "1.75": 1.1
+      },
+      "peso_filtro": {
+        "60": 0.9,
+        "70": 1.0,
+        "80": 1.1
+      },
+      "actividad_fisica": {
+        "baja": 1.0,
+        "moderada": 1.1,
+        "alta": 1.3
+      }
+    }
+  ],
+
+  "actividades_fisicas": {
+    "caminar": "baja",
+    "yoga": "baja",
+    "jugar en casa": "baja",
+    "bailar": "moderada",
+    "bicicleta": "moderada",
+    "futbol": "moderada",
+    "natacion": "alta",
+    "basket": "alta",
+    "atletismo": "alta",
+    "tenis": "alta",
+    "correr": "alta"
+  }
+}

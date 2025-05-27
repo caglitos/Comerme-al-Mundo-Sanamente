@@ -24,6 +24,7 @@ import {
   createDiscapacitado,
   getDiscapacitadoByUser,
 } from "../controllers/data.controller.js";
+import { calcularCalorias } from "../scripts/calculadora.js";
 
 const router = Router();
 
@@ -102,6 +103,20 @@ router.get("/discapacitado/:usuarioId", authRequiered, (req, res) => {
       });
     if (!row) return res.status(404).json({ message: "No encontrado" });
     res.json(row);
+  });
+});
+
+// Calorías recomendadas
+router.get("/calorias/:usuarioId", authRequiered, (req, res) => {
+  const usuarioId = req.params.usuarioId;
+  calcularCalorias(usuarioId, (err, calorias) => {
+    if (err) {
+      return res.status(500).json({
+        message: err.message || "Error al calcular calorías",
+        error: err,
+      });
+    }
+    res.json({ calorias });
   });
 });
 

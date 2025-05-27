@@ -111,7 +111,7 @@ const deportistas = () => {
           type="number"
           name="edad"
           id="edad"
-          placeholder="Edad"
+          placeholder="Edad (años)"
           required
         />
         <input
@@ -133,18 +133,29 @@ const deportistas = () => {
           type="text"
           name="objetivo"
           id="objetivo"
-          placeholder="Objetivo"
+          placeholder="Objetivo (imc = peso/altura^2)"
         />
         <input
           type="text"
           name="duracion"
           id="duracion"
-          placeholder="Duración"
+          placeholder="Duración (horas)"
         />
         <select name="deporte" id="deporte">
-          <option value="futbol">Fútbol</option>
+          <option value="artes-marciales">Artes Marciales</option>
+          <option value="atletismo">Atletismo</option>
           <option value="basket">Baloncesto</option>
+          <option value="boxeo">Boxeo</option>
+          <option value="ciclismo">Ciclismo</option>
+          <option value="escalada">Escalada</option>
+          <option value="futbol">Fútbol</option>
+          <option value="gimnasia">Gimnasia</option>
+          <option value="hockey">Hockey</option>
+          <option value="natacion">Natación</option>
+          <option value="pesas">Pesas</option>
+          <option value="snowboard">Snowboard</option>
           <option value="tenis">Tenis</option>
+          <option value="voleibol">Voleibol</option>
           <option value="otro">Otro</option>
         </select>
         <input

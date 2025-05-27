@@ -61,6 +61,103 @@ export function deleteCategoria(usuarioId, categoriaId, callback) {
   );
 }
 
+//---------- DATOS ------------
+export function getAllDatosByUser(usuarioId, callback) {
+  db.all("SELECT * FROM datos WHERE usuarioId = ?", [usuarioId], (err, rows) =>
+    callback(err, rows)
+  );
+}
+
+export function getDatosByID(usuarioId, datoId, callback) {
+  db.get(
+    "SELECT * FROM datos WHERE id = ? AND usuarioId = ?",
+    [datoId, usuarioId],
+    (err, row) => callback(err, row)
+  );
+}
+
+export function createDatos(
+  usuarioId,
+  {
+    sexo,
+    edad,
+    peso,
+    altura,
+    objetivo,
+    duracion,
+    deporte,
+    restricciones,
+    frecuencia,
+  },
+  callback
+) {
+  if (!sexo || !edad || !peso || !altura) {
+    return callback({ message: "Todos los campos son obligatorios" });
+  }
+  db.run(
+    "INSERT INTO datos (usuarioId, sexo, edad, peso, altura, objetivo, duracion, deporte, restricciones, frecuencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    [
+      usuarioId,
+      sexo,
+      edad,
+      peso,
+      altura,
+      objetivo,
+      duracion,
+      deporte,
+      restricciones,
+      frecuencia,
+    ],
+    function (err) {
+      callback(err, this?.lastID);
+    }
+  );
+}
+
+export function updateDatos(usuarioId, datoId, datos, callback) {
+  const {
+    sexo,
+    edad,
+    peso,
+    altura,
+    objetivo,
+    duracion,
+    deporte,
+    restricciones,
+    frecuencia,
+  } = datos;
+
+  db.run(
+    "UPDATE datos SET sexo = ?, edad = ?, peso = ?, altura = ?, objetivo = ?, duracion = ?, deporte = ?, restricciones = ?, frecuencia = ? WHERE id = ? AND usuarioId = ?",
+    [
+      sexo,
+      edad,
+      peso,
+      altura,
+      objetivo,
+      duracion,
+      deporte,
+      restricciones,
+      frecuencia,
+      datoId,
+      usuarioId,
+    ],
+    function (err) {
+      callback(err, this?.changes);
+    }
+  );
+}
+
+export function deleteDatos(usuarioId, datoId, callback) {
+  db.run(
+    "DELETE FROM datos WHERE id = ? AND usuarioId = ?",
+    [datoId, usuarioId],
+    function (err) {
+      callback(err, this?.changes);
+    }
+  );
+}
+
 // --------- HABITO ---------
 export function getAllHabitosByUser(usuarioId, callback) {
   db.all("SELECT * FROM habito WHERE usuarioId = ?", [usuarioId], (err, rows) =>
@@ -159,5 +256,43 @@ export function deleteProgreso(habitoId, progresoId, callback) {
     function (err) {
       callback(err, this?.changes);
     }
+  );
+}
+
+// --------- DISCAPACITADO ---------
+export function createDiscapacitado(
+  usuarioId,
+  { genero, edad, peso, altura, objetivo, discapacidad, movilidad, frecuencia },
+  callback
+) {
+  if (!genero || !edad || !peso || !altura || !discapacidad || !movilidad) {
+    return callback({
+      message: "Todos los campos obligatorios deben ser completados",
+    });
+  }
+  db.run(
+    "INSERT INTO discapacitado (usuarioId, genero, edad, peso, altura, objetivo, discapacidad, movilidad, frecuencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    [
+      usuarioId,
+      genero,
+      edad,
+      peso,
+      altura,
+      objetivo,
+      discapacidad,
+      movilidad,
+      frecuencia,
+    ],
+    function (err) {
+      callback(err, this?.lastID);
+    }
+  );
+}
+
+export function getDiscapacitadoByUser(usuarioId, callback) {
+  db.get(
+    "SELECT * FROM discapacitado WHERE usuarioId = ?",
+    [usuarioId],
+    (err, row) => callback(err, row)
   );
 }

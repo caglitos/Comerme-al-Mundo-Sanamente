@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch("/api/perfil");
+    const response = await fetch("/api/profile");
     if (response.ok) {
       const user = await response.json();
       const profileElement = document.getElementById("profile");

@@ -6,6 +6,11 @@ import {
   createCategoria,
   updateCategoria,
   deleteCategoria,
+  getAllDatosByUser,
+  getDatosByID,
+  createDatos,
+  updateDatos,
+  deleteDatos,
   getAllHabitosByUser,
   getHabitoById,
   createHabito,
@@ -16,6 +21,8 @@ import {
   createProgreso,
   updateProgreso,
   deleteProgreso,
+  createDiscapacitado,
+  getDiscapacitadoByUser,
 } from "../controllers/data.controller.js";
 
 const router = Router();
@@ -39,6 +46,28 @@ router.delete(
   deleteCategoria
 );
 
+// Datos
+router.get("/datos/:usuarioId", authRequiered, getAllDatosByUser);
+router.get("/dato/:usuarioId/:datoId", authRequiered, getDatosByID);
+router.post("/dato/:usuarioId", authRequiered, (req, res) => {
+  const usuarioId = req.params.usuarioId;
+  const datos = req.body;
+  createDatos(usuarioId, datos, (err, lastID) => {
+    if (err) {
+      // Always send a clear error message
+      return res.status(500).json({
+        message: err.message || "Error en la base de datos",
+        error: err,
+      });
+    }
+    res
+      .status(201)
+      .json({ id: lastID, message: "Datos creados correctamente" });
+  });
+});
+router.put("/dato/:usuarioId/:datoId", authRequiered, updateDatos);
+router.delete("/dato/:usuarioId/:datoId", authRequiered, deleteDatos);
+
 // Hábitos
 router.get("/habitos/:usuarioId", authRequiered, getAllHabitosByUser);
 router.get("/habito/:usuarioId/:habitoId", authRequiered, getHabitoById);
@@ -52,5 +81,28 @@ router.get("/progreso/:habitoId/:progresoId", authRequiered, getProgresoById);
 router.post("/progreso/:habitoId", authRequiered, createProgreso);
 router.put("/progreso/:habitoId/:progresoId", authRequiered, updateProgreso);
 router.delete("/progreso/:habitoId/:progresoId", authRequiered, deleteProgreso);
+
+// Discapacitado
+router.post("/discapacitado/:usuarioId", authRequiered, (req, res) => {
+  createDiscapacitado(req.params.usuarioId, req.body, (err, lastID) => {
+    if (err)
+      return res.status(500).json({
+        message: err.message || "Error en la base de datos",
+        error: err,
+      });
+    res.json({ id: lastID });
+  });
+});
+router.get("/discapacitado/:usuarioId", authRequiered, (req, res) => {
+  getDiscapacitadoByUser(req.params.usuarioId, (err, row) => {
+    if (err)
+      return res.status(500).json({
+        message: err.message || "Error en la base de datos",
+        error: err,
+      });
+    if (!row) return res.status(404).json({ message: "No encontrado" });
+    res.json(row);
+  });
+});
 
 export default router;

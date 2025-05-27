@@ -71,6 +71,7 @@ function sendLoginData() {
     headers: {
       "Content-Type": "application/json",
     },
+    credentials: "include", // importante para cookies
     body: JSON.stringify({ email, password }),
   })
     .then((response) => {

@@ -5,7 +5,6 @@ import {
   findUserByEmailAndName,
   findUserById,
 } from "../models/user.model.js";
-import e from "express";
 
 export const register = async (req, res) => {
   const { nombre, email, password } = req.body;
@@ -13,8 +12,13 @@ export const register = async (req, res) => {
     const hash = await bcrypt.hash(password, 10);
     createUser(nombre, email, hash, async (err, lastID) => {
       if (err) return res.status(500).json(err);
-      const token = createAccessToken({ id: lastID });
-      res.cookie("token", token, { expiresIn: "7d" });
+      const token = await createAccessToken({ id: lastID });
+      res.cookie("token", token, {
+        httpOnly: true,
+        sameSite: "lax",
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        path: "/",
+      });
 
       res.json({ id: lastID, username: nombre, email: email, token: token });
     });
@@ -34,8 +38,13 @@ export const login = async (req, res) => {
       const valid = await bcrypt.compare(password, user.password);
       if (!valid)
         return res.status(401).json({ message: "Contraseña incorrecta" });
-      const token = createAccessToken({ id: user.id });
-      res.cookie("token", token, { expiresIn: "7d" });
+      const token = await createAccessToken({ id: user.id });
+      res.cookie("token", token, {
+        httpOnly: true,
+        sameSite: "lax",
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        path: "/",
+      });
       res.json({
         id: user.id,
         username: user.nombre,

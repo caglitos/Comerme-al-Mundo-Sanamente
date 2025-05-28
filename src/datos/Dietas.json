@@ -1,0 +1,154 @@
+{
+  "dietas": [
+    {
+      "calorias": 750,
+      "desayuno": [
+        "1 yogur natural descremado con una cucharadita de miel",
+        "1 huevo cocido con una rebanada de pan integral",
+        "1 taza de leche descremada con avena",
+        "1 banana pequeña con una cucharada de mantequilla de maní",
+        "1 tostada integral con rodajas de tomate y queso bajo en grasa",
+        "1 vaso de jugo de naranja natural con 3 galletas integrales",
+        "1 rebanada de pan integral con aguacate"
+      ],
+      "almuerzo": [
+        "1 taza de sopa de vegetales con una cucharada de arroz",
+        "1 arepa pequeña con queso fresco",
+        "1 papa cocida con una lata pequeña de atún al agua",
+        "Ensalada verde con un huevo duro",
+        "1 taza de lentejas sin aceite",
+        "1 wrap pequeño de lechuga con pollo",
+        "Sándwich de pan integral con pechuga de pavo"
+      ],
+      "cena": [
+        "1 taza de consomé de pollo con verduras",
+        "Tortilla de espinaca con una clara de huevo",
+        "1 rebanada de pan con aguacate y tomate",
+        "1 taza de verduras cocidas con garbanzos",
+        "1 huevo a la plancha con media arepa integral",
+        "Ensalada de zanahoria con atún y limón",
+        "1 porción pequeña de pescado al vapor con calabacín"
+      ]
+    },
+    {
+      "calorias": 1250,
+      "desayuno": [
+        "1 taza de avena cocida con leche y rodajas de plátano",
+        "2 claras de huevo con espinaca + 1 rebanada de pan integral",
+        "1 vaso de smoothie de frutas con avena",
+        "1 yogur natural con una cucharada de granola",
+        "1 rebanada de pan con queso fresco y aguacate",
+        "1 taza de cereal integral con leche semidescremada",
+        "1 banana con mantequilla de maní y chía"
+      ],
+      "almuerzo": [
+        "1 taza de arroz integral con vegetales y pechuga de pollo",
+        "Sopa de lentejas con pan integral",
+        "Wrap de tortilla integral con atún y tomate",
+        "Arepa mediana con huevo revuelto",
+        "Pechuga de pavo con puré de papa y ensalada verde",
+        "Bowl de quinoa con garbanzos y verduras",
+        "Tazón de ensalada con huevo, tomate, pepino y garbanzos"
+      ],
+      "cena": [
+        "Omelet de espinaca y champiñones con queso bajo en grasa",
+        "Tostadas integrales con atún y tomate",
+        "Puré de calabaza con 1 filete de pescado",
+        "1 taza de arroz salteado con brócoli y tofu",
+        "Sopa de verduras con 1 huevo duro",
+        "Wrap de pollo con lechuga y aguacate",
+        "1 taza de lentejas con zanahoria y apio"
+      ]
+    },
+    {
+      "calorias": 1750,
+      "desayuno": [
+        "Smoothie con plátano, avena, leche y mantequilla de maní",
+        "2 rebanadas de pan integral con aguacate y tomate",
+        "1 taza de granola casera con yogur natural",
+        "Omelet con queso, espinaca y champiñones",
+        "Pan pita con hummus y huevo cocido",
+        "Taza de cereal integral con frutas y leche",
+        "Bowl de frutas con nueces y miel"
+      ],
+      "almuerzo": [
+        "Pechuga de pollo a la plancha con batata y ensalada",
+        "Spaghetti integral con salsa de tomate natural y atún",
+        "Ensalada grande con garbanzos, quinoa, pimiento y huevo",
+        "Hamburguesa de lentejas con pan integral y tomate",
+        "Sopa de pollo con verduras + arroz",
+        "Wrap de pavo, lechuga y queso bajo en grasa",
+        "Bowl de arroz con tofu y vegetales al vapor"
+      ],
+      "cena": [
+        "Tortilla integral con queso y espinaca",
+        "Lasaña de berenjena con carne magra",
+        "Pizza de base de avena con vegetales",
+        "Sopa de quinoa con verduras y pollo",
+        "Arepa con huevo y aguacate",
+        "Filete de pescado con papas cocidas y ensalada",
+        "Tazón de arroz con lentejas y zanahorias"
+      ]
+    },
+    {
+      "calorias": 2250,
+      "desayuno": [
+        "Tazón de yogur griego con granola, plátano y miel",
+        "3 claras + 1 yema revueltas con espinaca y pan integral",
+        "Smoothie bowl con frutas, avena y semillas",
+        "2 rebanadas de pan integral con mantequilla de almendra",
+        "Cereal integral con leche y rodajas de fresa",
+        "Pan pita con queso fresco, tomate y albahaca",
+        "Porridge de avena con canela y manzana picada"
+      ],
+      "almuerzo": [
+        "Pechuga de pavo al horno con arroz, brócoli y zanahoria",
+        "Bowl de arroz con frijoles negros, palta y huevo",
+        "Wrap integral de pollo, espinaca y tomate",
+        "Lentejas con arroz integral y ensalada mixta",
+        "Spaghetti con carne molida magra y ensalada verde",
+        "Tazón de quinoa con verduras al wok y tofu",
+        "Ensalada grande con garbanzos, huevo, aguacate y pan integral"
+      ],
+      "cena": [
+        "Pizza casera de vegetales con base integral",
+        "Tortilla de huevo, papas y cebolla",
+        "Hamburguesa de pavo con batata y ensalada",
+        "Sopa de vegetales con arroz y pollo",
+        "Fajitas de pollo con pimientos y tortillas integrales",
+        "Ensalada con lentejas, arroz y queso fresco",
+        "Wrap de atún con hummus y lechuga"
+      ]
+    },
+    {
+      "calorias": 2750,
+      "desayuno": [
+        "Porridge de avena con frutas, chía y miel",
+        "2 rebanadas de pan integral con aguacate y huevo pochado",
+        "Smoothie con avena, leche, plátano y mantequilla de almendra",
+        "Omelet de 3 huevos con vegetales + tostadas",
+        "Yogur griego con granola, frutas y nueces",
+        "Pan de centeno con queso crema y miel",
+        "Tazón de cereal integral con leche y banana"
+      ],
+      "almuerzo": [
+        "Pollo al horno con arroz, habichuelas y ensalada",
+        "Sopa de quinoa con carne magra y verduras",
+        "Lasaña de vegetales con queso bajo en grasa",
+        "Wrap de tortilla integral con frijoles, arroz y pavo",
+        "Bowl de lentejas, arroz y ensalada de zanahoria",
+        "Spaghetti con albóndigas caseras y ensalada verde",
+        "Tazón de couscous con garbanzos, tomate y pepino"
+      ],
+      "cena": [
+        "Arepas con queso fresco y aguacate",
+        "Ensalada con huevo, arroz y vegetales cocidos",
+        "Filete de salmón con papas horneadas y espárragos",
+        "Tortilla de papas con ensalada",
+        "Pasta con atún y tomate natural",
+        "Sopa de vegetales con pan integral con aguacate",
+        "Wrap de carne magra con verduras al grill"
+      ]
+    }
+  ]
+}

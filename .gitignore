@@ -4,3 +4,6 @@ node_modules
 #vida.db
 vida.db
 
+#SSH Key
+SSHkey
+SSHkey.pub

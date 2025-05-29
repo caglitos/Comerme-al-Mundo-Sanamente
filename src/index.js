@@ -8,3 +8,5 @@ connectDB();
 app.listen(port, () => {
   console.log(`Servidor en el puerto ${port}`);
 });
+
+console.log("manzna");

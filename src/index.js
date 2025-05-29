@@ -6,5 +6,5 @@ const port = process.env.PORT || 3000;
 connectDB();
 
 app.listen(port, () => {
-  console.log("Servidor en http://localhost:3000");
+  console.log(`Servidor en el puerto ${port}`);
 });

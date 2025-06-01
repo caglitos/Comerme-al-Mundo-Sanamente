@@ -8,13 +8,14 @@ async function getCaloriasYMenu() {
     }
   } catch (e) {}
   if (!usuarioId) {
-    document.querySelector(".calorias").textContent =
-      "Debes iniciar sesión para ver tus calorías recomendadas.";
+    document.querySelector(
+      ".calorias"
+    ).innerHTML = `Debes <a href="../LogIn" style="color: blue; text-decoration: underline" >iniciar sesión</a> para ver tus calorías recomendadas.`;
     return;
   }
   let calorias = null;
   try {
-    const res = await fetch(`/api/calorias/${usuarioId}`, {
+    const res = await fetch(`/api/data//calorias/${usuarioId}`, {
       credentials: "include",
     });
     if (!res.ok) {

@@ -12,14 +12,10 @@ export const createUser = (nombre, email, hash, callback) => {
   );
 };
 
-export const findUserByEmailAndName = (email, nombre, callback) => {
-  db.get(
-    "SELECT * FROM usuario WHERE email = ? AND nombre = ?",
-    [email, nombre],
-    (err, user) => {
-      callback(err, user);
-    }
-  );
+export const findUserByEmail = (email, callback) => {
+  db.get("SELECT * FROM usuario WHERE email = ?", [email], (err, user) => {
+    callback(err, user);
+  });
 };
 
 export const findUserById = (id, callback) => {

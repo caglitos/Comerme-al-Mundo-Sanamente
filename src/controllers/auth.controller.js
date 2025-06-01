@@ -2,7 +2,7 @@ import bcrypt from "bcryptjs";
 import { createAccessToken } from "../libs/jwt.js";
 import {
   createUser,
-  findUserByEmailAndName,
+  findUserByEmail,
   findUserById,
 } from "../models/user.model.js";
 
@@ -28,9 +28,9 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const { nombre, email, password } = req.body;
+  const { email, password } = req.body;
   try {
-    findUserByEmailAndName(email, nombre, async (err, user) => {
+    findUserByEmail(email, async (err, user) => {
       if (err)
         return res.status(500).json({ message: "Error de base de datos" });
       if (!user)

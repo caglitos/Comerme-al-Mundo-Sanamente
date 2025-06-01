@@ -19,8 +19,8 @@ app.use(
 app.use(express.json());
 app.use(express.static("./Client"));
 app.use(cookieParser());
-app.use("/api", authRoutes);
-app.use("/api", dataRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/data", dataRoutes);
 app.get("/dietas.json", (req, res) => {
   res.sendFile(path.join(__dirname, "datos", "Dietas.json"));
 });

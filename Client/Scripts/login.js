@@ -42,7 +42,7 @@ function sendRegisterData() {
   };
 
   // Enviar los datos al backend usando fetch
-  fetch("./../api/register", {
+  fetch("./../api/auth/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -66,7 +66,7 @@ function sendLoginData() {
   const email = document.getElementById("Lemail").value;
   const password = document.getElementById("Lpassword").value;
 
-  fetch("./../api/login", {
+  fetch("./../api/auth/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let usuarioId = null;
 
   // Obtener el usuarioId antes de permitir enviar el formulario
-  fetch("/api/profile", { credentials: "include" })
+  fetch("/api/auth/profile", { credentials: "include" })
     .then((res) => res.json())
     .then((user) => {
       usuarioId = user.id;

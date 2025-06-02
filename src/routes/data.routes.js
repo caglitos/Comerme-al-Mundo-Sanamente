@@ -51,6 +51,11 @@ router.delete(
 router.get("/datos/:usuarioId", authRequiered, getAllDatosByUser);
 router.get("/dato/:usuarioId/:datoId", authRequiered, getDatosByID);
 router.post("/dato/:usuarioId", authRequiered, (req, res) => {
+  console.log(
+    "POST recibido en /api/data/dato/",
+    req.params.usuarioId,
+    req.body
+  );
   const usuarioId = req.params.usuarioId;
   const datos = req.body;
   createDatos(usuarioId, datos, (err, lastID) => {

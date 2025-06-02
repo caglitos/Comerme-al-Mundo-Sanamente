@@ -35,6 +35,7 @@ export const login = async (req, res) => {
         return res.status(500).json({ message: "Error de base de datos" });
       if (!user)
         return res.status(404).json({ message: "Usuario no encontrado" });
+
       const valid = await bcrypt.compare(password, user.password);
       if (!valid)
         return res.status(401).json({ message: "Contraseña incorrecta" });

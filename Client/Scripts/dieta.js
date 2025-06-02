@@ -1,7 +1,9 @@
 async function getCaloriasYMenu() {
   let usuarioId = null;
   try {
-    const profileRes = await fetch("/api/profile", { credentials: "include" });
+    const profileRes = await fetch("./../api/auth/profile", {
+      credentials: "include",
+    });
     if (profileRes.ok) {
       const user = await profileRes.json();
       usuarioId = user.id;
@@ -14,24 +16,51 @@ async function getCaloriasYMenu() {
     return;
   }
   let calorias = null;
+  let datosDisc = null;
+  let esDiscapacitado = false;
+  // 1. Intenta como deportista (tabla datos)
   try {
-    const res = await fetch(`/api/data//calorias/${usuarioId}`, {
+    const res = await fetch(`./../api/data/calorias/${usuarioId}`, {
       credentials: "include",
     });
-    if (!res.ok) {
-      const data = await res.json();
-      document.querySelector(".calorias").textContent =
-        data.message || "No se pudieron calcular las calorías.";
-      return;
-    }
+    if (!res.ok) throw new Error("No datos deportista");
     calorias = (await res.json()).calorias;
     document.querySelector(
       ".calorias"
     ).textContent = `Debes consumir aproximadamente ${calorias} calorías diarias.`;
   } catch (e) {
-    document.querySelector(".calorias").textContent =
-      "Error al obtener las calorías.";
-    return;
+    // 2. Si no hay datos de deportista, intenta como discapacitado
+    try {
+      const resDisc = await fetch(`./../api/data/discapacitado/${usuarioId}`, {
+        credentials: "include",
+      });
+      if (!resDisc.ok) throw new Error("No datos discapacitado");
+      datosDisc = await resDisc.json();
+      // Calcula calorías con los datos disponibles (ignora deportes, factor 1)
+      // Suponiendo que el backend responde con los campos: genero, edad, peso, altura
+      const { genero, edad, peso, altura } = datosDisc;
+      if (!genero || !edad || !peso || !altura) {
+        document.querySelector(".calorias").textContent =
+          "No hay suficientes datos para calcular las calorías.";
+        return;
+      }
+      // Fórmula Harris-Benedict simplificada
+      let tmb;
+      if (genero === "masculino") {
+        tmb = 66.47 + 13.75 * peso + 5.003 * altura - 6.755 * edad;
+      } else {
+        tmb = 655.1 + 9.563 * peso + 1.85 * altura - 4.676 * edad;
+      }
+      calorias = Math.round(tmb * 1); // factor actividad = 1
+      esDiscapacitado = true;
+      document.querySelector(
+        ".calorias"
+      ).textContent = `Debes consumir aproximadamente ${calorias} calorías diarias.`;
+    } catch (e2) {
+      document.querySelector(".calorias").textContent =
+        "No se pudieron calcular las calorías. Completa tu formulario primero.";
+      return;
+    }
   }
   let dietasJson;
   try {
@@ -51,6 +80,11 @@ async function getCaloriasYMenu() {
       minDiff = diff;
       dietaCercana = d;
     }
+  }
+  // Si es discapacitado, puedes mostrar un mensaje extra o adaptar la dieta si lo deseas
+  if (esDiscapacitado) {
+    document.querySelector(".calorias").textContent +=
+      " (Dieta calculada para discapacitado)";
   }
   const dias = [
     "Domingo",

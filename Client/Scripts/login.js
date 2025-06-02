@@ -7,6 +7,7 @@ enter.addEventListener("keypress", function (event) {
     sendLoginData(); // Llamar a la función para enviar los datos de inicio de sesión
   }
 });
+
 const enter2 = document.getElementById("RconfirmPassword");
 enter2.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
@@ -54,7 +55,7 @@ function sendRegisterData() {
     .then((data) => {
       console.log("Success:", data);
 
-      window.location.href = "./../index.html"; // Redirigir a la página de inicio
+      window.location.href = "./../"; // Redirigir a la página de inicio
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -76,8 +77,10 @@ function sendLoginData() {
   })
     .then((response) => {
       if (response.ok) {
-        window.location.href = "./../index.html"; // Redirigir a la página de inicio
+        console.log(response);
+        window.location.href = "./../"; // Redirigir a la página de inicio
       } else {
+        console.log(response);
         alert("Error en el inicio de sesión");
       }
     })

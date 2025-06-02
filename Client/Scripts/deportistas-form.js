@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Script deportistas-form.js cargado");
   const form = document.getElementById("deportistas-form");
   if (!form) return;
 
   let usuarioId = null;
 
   // Obtener el usuarioId antes de permitir enviar el formulario
-  fetch("/api/auth/profile", { credentials: "include" })
+  fetch("../api/auth/profile", { credentials: "include" })
     .then((res) => res.json())
     .then((user) => {
       usuarioId = user.id;
@@ -13,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(() => {
       alert("No autenticado. Por favor inicia sesión.");
       form.querySelector("button[type='submit']").disabled = true;
-    });
+    })
+    .catch((error) => console.log(error));
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -22,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     // Obtén los valores de los campos
-    const sexo = document.getElementById("sexo").value;
+    const genero = document.getElementById("sexo").value;
     const edad = document.getElementById("edad").value;
     const peso = document.getElementById("peso").value;
     const altura = document.getElementById("altura").value;
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Construye el objeto de datos
     const data = {
-      sexo,
+      genero,
       edad: parseInt(edad, 10),
       peso: parseFloat(peso),
       altura: parseInt(altura, 10),
@@ -54,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         credentials: "include",
         body: JSON.stringify(data),
       });
+      console.log(requestAnimationFrame.body);
       let result;
       const contentType = response.headers.get("content-type");
       if (contentType && contentType.includes("application/json")) {

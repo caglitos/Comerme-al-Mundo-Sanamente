@@ -13,11 +13,7 @@ const router = Router();
 
 router.post("/register", validateSchema(registerSchema), register);
 
-router.post(
-  "/login",
-  // validateSchema(loginSchema),
-  login
-);
+router.post("/login", validateSchema(loginSchema), login);
 
 router.get("/profile", authRequiered, profile);
 

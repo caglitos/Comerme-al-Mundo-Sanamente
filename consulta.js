@@ -183,7 +183,7 @@ function preguntar() {
         default:
           console.log("Opción no válida");
       }
-      setTimeout(preguntar, 500); // Espera a que termine la operación antes de volver a preguntar
+      setTimeout(preguntar, 2000); // Espera a que termine la operación antes de volver a preguntar
     }
   );
 }
